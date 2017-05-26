@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack.NetCore" Version="1.5.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutohomeCralwer.Core\AutohomeCralwer.Core.csproj" />
+  </ItemGroup>
 </Project>
