@@ -1,0 +1,32 @@
+﻿品牌
+
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=1
+
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=6
+
+// 包含一些跑车、赛道跑车品牌 新能源、电动车、未上市
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=11
+
+
+
+// 根据品牌获取厂商和车系 （包括在售和停售）
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=3&value={brandId}
+
+
+
+// 在售的车系
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=7&value=33
+
+// 根据品牌获取厂商和车系 （包括 0 未上市  20 在售  40 停售）
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=13&value={brandId}
+
+
+
+// 根据车系获取年限和车型 状态（20 30 40）
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=5&value={serieId}
+
+// 状态（20 30）
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=8&value=3170
+
+
+
