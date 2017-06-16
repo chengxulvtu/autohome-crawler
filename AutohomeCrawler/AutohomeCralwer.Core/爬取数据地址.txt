@@ -14,7 +14,7 @@ http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=3&value={brandId}
 
 
 // 在售的车系
-http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=7&value=33
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=7&value={brandId}
 
 // 根据品牌获取厂商和车系 （包括 0 未上市  20 在售  40 停售）
 http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=13&value={brandId}
@@ -26,7 +26,7 @@ http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=13&value={brandId}
 http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=5&value={serieId}
 
 // 状态（20 30）
-http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=8&value=3170
+http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=8&value={serieId}
 
 
 

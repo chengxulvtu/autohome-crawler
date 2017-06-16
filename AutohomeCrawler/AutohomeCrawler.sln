@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCrawler", "Autohome
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCralwer.Core", "AutohomeCralwer.Core\AutohomeCralwer.Core.csproj", "{5784AA9F-2365-47C3-8255-8647C260BEC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCralwer.Core.Extensions", "AutohomeCralwer.Core.Extensions\AutohomeCralwer.Core.Extensions.csproj", "{B568B752-6904-4892-B3E3-B9382A1DC3F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{5784AA9F-2365-47C3-8255-8647C260BEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5784AA9F-2365-47C3-8255-8647C260BEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5784AA9F-2365-47C3-8255-8647C260BEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
