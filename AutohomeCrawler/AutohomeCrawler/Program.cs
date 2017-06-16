@@ -15,6 +15,9 @@ namespace AutohomeCrawler
             Encoding.RegisterProvider(provider);
 
             IServiceCollection services = new ServiceCollection();
+
+            services.AddScoped<IJsonStore, FileJsonStore>();
+
             services.AddTransient<IBrandCralwer, BrandCralwer>();
             services.AddTransient<ISerieCralwer, SerieCralwer>();
 
@@ -30,17 +33,17 @@ namespace AutohomeCrawler
                 Console.WriteLine($"{brand.Id}-{brand.Name}-{brand.PinYin}-{brand.BFirstLetter}");
 
 
-                var factories = serieCralwer.GetFactoriesAsync(brand.Id, GetSerieType.All).Result;
+                //var factories = serieCralwer.GetFactoriesAsync(brand.Id, GetSerieType.All).Result;
 
-                foreach (var factory in factories)
-                {
-                    Console.WriteLine($"{factory.Id}-{factory.Name}");
+                //foreach (var factory in factories)
+                //{
+                //    Console.WriteLine($"{factory.Id}-{factory.Name}");
 
-                    foreach (var serie in factory.Series)
-                    {
-                        Console.WriteLine($"{serie.Id}-{serie.Name}-{serie.State}");
-                    }
-                }
+                //    foreach (var serie in factory.Series)
+                //    {
+                //        Console.WriteLine($"{serie.Id}-{serie.Name}-{serie.State}");
+                //    }
+                //}
 
             }
 
