@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Cralwer\" />
+    <Folder Include="Store\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />

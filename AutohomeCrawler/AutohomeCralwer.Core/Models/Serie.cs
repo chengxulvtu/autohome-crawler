@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace AutohomeCralwer.Core.Models
 {
+    // 车系
     public class Serie
     {
         public int Id { get; set; }
@@ -24,6 +25,7 @@ namespace AutohomeCralwer.Core.Models
         public int BrandId { get; set; }
     }
 
+    // 获取车系类型
     public enum GetSerieType
     {
         // 在售 

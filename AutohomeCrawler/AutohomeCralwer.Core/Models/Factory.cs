@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace AutohomeCralwer.Core.Models
 {
+    // 汽车厂商
     public class Factory
     {
         public int Id { get; set; }

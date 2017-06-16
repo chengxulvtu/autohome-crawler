@@ -27,7 +27,7 @@ namespace AutohomeCralwer.Core
 
         private string BuildRequestUri(GetBrandType type)
         {
-            return $"{Constant.BrandUri}?type={(int)type}";
+            return $"{Constant.AutohomeUri}?type={(int)type}";
         }
     }
 }

@@ -7,6 +7,6 @@ namespace AutohomeCralwer.Core
 {
     public interface ISerieCralwer
     {
-        Task<IEnumerable<Serie>> GetSeriesAsync(GetBrandType type);
+        Task<IEnumerable<Factory>> GetFactoriesAsync(int brandId, GetSerieType type);
     }
 }
