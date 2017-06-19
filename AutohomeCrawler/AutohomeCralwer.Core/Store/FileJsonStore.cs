@@ -1,60 +1,99 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AutohomeCralwer.Core
 {
     public class FileJsonStore : IJsonStore
     {
-        public string GetBrandJson()
+        public Task<string> GetBrandJsonAsync()
+        {
+            var fileName = BuildBrandJsonFileName();
+
+        }
+
+        public Task<string> GetCarTypesJsonOfSerieAsync(int serieId, int yearId)
         {
             throw new NotImplementedException();
         }
 
-        public string GetCarTypesJsonOfSerie(int serieId, int yearId)
+        public Task<string> GetCarTypesJsonOfSerieAsync(int serieId)
         {
             throw new NotImplementedException();
         }
 
-        public string GetCarTypesJsonOfSerie(int serieId)
+        public Task<string> GetCarTypesJsonOfSerieYearAsync(int serieId, int yearId)
         {
             throw new NotImplementedException();
         }
 
-        public string GetCarTypesJsonOfSerieYear(int serieId, int yearId)
+        public Task<string> GetSeriesJsonOfBrandAsync(int brandId)
         {
             throw new NotImplementedException();
         }
 
-        public string GetSeriesJsonOfBrand(int brandId)
+        public Task SaveBrandJsonAsync(string json)
         {
-            throw new NotImplementedException();
+            var fileName = BuildBrandJsonFileName();
+            return SaveJsonAsync(fileName, json);
         }
 
-        public void SaveBrandJson(string json)
+        public Task SaveCarTypesJsonOfSerieAsync(int serieId, string json)
         {
-            var fileName = Path.Combine(AppContext.BaseDirectory, "brand.json");
+            var fileName = BuildCarTypesJsonOfSerieAsync(serieId);
+            return SaveJsonAsync(fileName, json);
+        }
+
+        public Task SaveCarTypesJsonOfSerieYearAsync(int serieId, int yearId, string json)
+        {
+            var fileName = BuildCarTypesJsonOfSerieYear(serieId, yearId);
+            return SaveJsonAsync(fileName, json);
+        }
+
+        public Task SaveSeriesJsonOfBrandAsync(int brandId, string json)
+        {
+            var fileName = BuildSeriesJsonOfBrand(brandId);
+            return SaveJsonAsync(fileName, json);
+        }
+
+        private async Task SaveJsonAsync(string fileName, string json)
+        {
             using (var fileStream = new FileStream(fileName, FileMode.Create))
             {
                 var bytes = Encoding.UTF8.GetBytes(json);
-                fileStream.WriteAsync(bytes, 0, bytes.Length);
+                await fileStream.WriteAsync(bytes, 0, bytes.Length);
                 fileStream.Flush();
             }
         }
 
-        public void SaveCarTypesJsonOfSerie(int serieId, string json)
+        private async Task GetJsonAsync(string fileName)
         {
-            throw new NotImplementedException();
+            using (var fileStream = new FileStream(fileName, FileMode.Open))
+            {
+
+            }
         }
 
-        public void SaveCarTypesJsonOfSerieYear(int serieId, int yearId)
+
+        private string BuildBrandJsonFileName()
         {
-            throw new NotImplementedException();
+            return Path.Combine(AppContext.BaseDirectory, "Brand.json");
         }
 
-        public void SaveSeriesJsonOfBrand(int brandId, string json)
+        private string BuildCarTypesJsonOfSerieAsync(int serieId)
         {
-            throw new NotImplementedException();
+            return Path.Combine(AppContext.BaseDirectory, $"CarTypesJsonOfSerie_{serieId}.json");
+        }
+
+        private string BuildCarTypesJsonOfSerieYear(int serieId, int yearId)
+        {
+            return Path.Combine(AppContext.BaseDirectory, $"CarTypesJsonOfSerie_{serieId}_Year_{yearId}.json");
+        }
+
+        private string BuildSeriesJsonOfBrand(int brandId)
+        {
+            return Path.Combine(AppContext.BaseDirectory, $"SeriesJsonOfBrand_{brandId}.json");
         }
     }
 }
