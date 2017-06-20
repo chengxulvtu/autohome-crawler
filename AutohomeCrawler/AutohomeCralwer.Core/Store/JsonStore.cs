@@ -5,32 +5,61 @@ using System.Threading.Tasks;
 
 namespace AutohomeCralwer.Core
 {
+    public interface IJsonStore
+    {
+        // 从Store中获取已经获取过的品牌JSON数据
+        Task<string> GetBrandJsonAsync();
+
+        // 从Store中获取已经获取过的品牌的厂商、车系JSON数据
+        Task<string> GetSeriesJsonOfBrandAsync(int brandId);
+
+        // 从Store中获取已经获取的年限、车型JSON数据
+        Task<string> GetCarTypesJsonOfSerieAsync(int serieId);
+
+        /* 从Store中获取已经获取的车型JSON数据
+        // 这个JSON和上一个不同，这个是详细的JSON数据且只包含同一个年限下的，
+        // 上一个是包含车系下所有年限的车型信息且只包含简单的车型信息*/
+        Task<string> GetCarTypesJsonOfSerieYearAsync(int serieId, int yearId);
+
+        // 保存获取的JSON数据
+        Task SaveBrandJsonAsync(string json);
+
+        // 保存获取的品牌
+        Task SaveSeriesJsonOfBrandAsync(int brandId, string json);
+
+        // 保存获取的年限、车型JSON数据
+        Task SaveCarTypesJsonOfSerieAsync(int serieId, string json);
+
+        // 保存获取的详细车型数据
+        Task SaveCarTypesJsonOfSerieYearAsync(int serieId, int yearId, string json);
+
+
+    }
+
     public class FileJsonStore : IJsonStore
     {
         public Task<string> GetBrandJsonAsync()
         {
             var fileName = BuildBrandJsonFileName();
-
-        }
-
-        public Task<string> GetCarTypesJsonOfSerieAsync(int serieId, int yearId)
-        {
-            throw new NotImplementedException();
+            return GetJsonAsync(fileName);
         }
 
         public Task<string> GetCarTypesJsonOfSerieAsync(int serieId)
         {
-            throw new NotImplementedException();
+            var fileName = BuildCarTypesJsonOfSerie(serieId);
+            return GetJsonAsync(fileName);
         }
 
         public Task<string> GetCarTypesJsonOfSerieYearAsync(int serieId, int yearId)
         {
-            throw new NotImplementedException();
+            var fileName = BuildCarTypesJsonOfSerieYear(serieId, yearId);
+            return GetJsonAsync(fileName);
         }
 
         public Task<string> GetSeriesJsonOfBrandAsync(int brandId)
         {
-            throw new NotImplementedException();
+            var fileName = BuildSeriesJsonOfBrand(brandId);
+            return GetJsonAsync(fileName);
         }
 
         public Task SaveBrandJsonAsync(string json)
@@ -41,7 +70,7 @@ namespace AutohomeCralwer.Core
 
         public Task SaveCarTypesJsonOfSerieAsync(int serieId, string json)
         {
-            var fileName = BuildCarTypesJsonOfSerieAsync(serieId);
+            var fileName = BuildCarTypesJsonOfSerie(serieId);
             return SaveJsonAsync(fileName, json);
         }
 
@@ -67,11 +96,17 @@ namespace AutohomeCralwer.Core
             }
         }
 
-        private async Task GetJsonAsync(string fileName)
+        private async Task<string> GetJsonAsync(string fileName)
         {
+            if (!File.Exists(fileName))
+            {
+                return null;
+            }
             using (var fileStream = new FileStream(fileName, FileMode.Open))
             {
-
+                var bytes = new byte[fileStream.Length];
+                await fileStream.ReadAsync(bytes, 0, bytes.Length);
+                return Encoding.UTF8.GetString(bytes);
             }
         }
 
@@ -81,7 +116,7 @@ namespace AutohomeCralwer.Core
             return Path.Combine(AppContext.BaseDirectory, "Brand.json");
         }
 
-        private string BuildCarTypesJsonOfSerieAsync(int serieId)
+        private string BuildCarTypesJsonOfSerie(int serieId)
         {
             return Path.Combine(AppContext.BaseDirectory, $"CarTypesJsonOfSerie_{serieId}.json");
         }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCralwer.Core", "Aut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCralwer.Core.Extensions", "AutohomeCralwer.Core.Extensions\AutohomeCralwer.Core.Extensions.csproj", "{B568B752-6904-4892-B3E3-B9382A1DC3F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutohomeCralwer.EF.SQLServer", "AutohomeCralwer.EF.SQLServer\AutohomeCralwer.EF.SQLServer.csproj", "{B8C06F84-BF45-485B-8CBB-703A69BB7DEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B568B752-6904-4892-B3E3-B9382A1DC3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C06F84-BF45-485B-8CBB-703A69BB7DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C06F84-BF45-485B-8CBB-703A69BB7DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C06F84-BF45-485B-8CBB-703A69BB7DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C06F84-BF45-485B-8CBB-703A69BB7DEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
