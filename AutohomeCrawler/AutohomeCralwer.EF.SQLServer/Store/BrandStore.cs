@@ -16,7 +16,7 @@ namespace AutohomeCralwer.EF.SQLServer.Store
             _context = context;
         }
 
-        public async Task SaveBrandsAsync(IEnumerable<Brand> brands)
+        public async Task PersistBrandsAsync(IEnumerable<Brand> brands)
         {
             var brandEntities = brands.Select(t => new Entities.Brand
             {

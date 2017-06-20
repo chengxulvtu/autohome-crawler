@@ -34,7 +34,7 @@ namespace AutohomeCralwer.Core
             }
             var brands = _brandParser.Parse(brandJson);
 
-            await _brandStore.SaveBrandsAsync(brands);
+            await _brandStore.PersistBrandsAsync(brands);
 
             return brands;
         }
