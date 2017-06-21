@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace AutohomeCralwer.EF.SQLServer.Entities
 {
     public class Factory
@@ -12,5 +14,8 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         public int BrandId { get; set; }
 
         public virtual Brand Brand { get; set; }
+
+        public ICollection<Serie> Series = new List<Serie>();
+
     }
 }

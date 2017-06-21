@@ -715,7 +715,7 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// <summary>
         /// 后排座椅通风
         /// </summary>
-        public string RearSeatventilate { get; set; }
+        public string RearSeatVentilate { get; set; }
 
         /// <summary>
         /// 前排座椅按摩
@@ -730,7 +730,7 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// <summary>
         /// 第三排座椅
         /// </summary>
-        public string ThridRowSeat { get; set; }
+        public string ThirdRowSeat { get; set; }
 
         /// <summary>
         /// 后排座椅放倒方式 
