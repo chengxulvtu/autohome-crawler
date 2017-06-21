@@ -556,7 +556,7 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         ///<summary>
         ///感应后备箱
         ///</summary>
-        public string SenseTrunk { get; set; }
+        public string SensingTrunk { get; set; }
 
         ///<summary>
         ///车顶行李架
@@ -860,8 +860,120 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// </summary>
         public string AmbientLight { get; set; }
 
+        /// <summary>
+        /// 前电动车窗
+        /// </summary>
+        public string FrontElecWindow { get; set; }
 
-        
+        /// <summary>
+        /// 后电动车窗
+        /// </summary>
+        public string RearElecWindow { get; set; }
+
+
+        /// <summary>
+        /// 车窗防夹手功能
+        /// </summary>
+        public string AntiPinchWindow { get; set; }
+
+        /// <summary>
+        /// 防紫外线/隔热玻璃
+        /// </summary>
+        public string AntiUVInsulatingGlass { get; set; }
+
+
+        /// <summary>
+        /// 后视镜电动调节
+        /// </summary>
+        public string RearViewMirrorAdjustable { get; set; }
+
+        /// <summary>
+        /// 后视镜加热
+        /// </summary>
+        public string MirrorHeat { get; set; }
+
+        /// <summary>
+        /// 内后视镜自动防眩目
+        /// </summary>
+        public string InnerMirrorAutoDimming { get; set; }
+
+        /// <summary>
+        /// 外后视镜自动防眩目
+        /// </summary>
+        public string OuterMirrorAutoDimming { get; set; }
+
+
+        /// <summary>
+        /// 后视镜电动折叠
+        /// </summary>
+        public string MirrorElecFold { get; set; }
+
+        /// <summary>
+        /// 后视镜记忆
+        /// </summary>
+        public string MirrorMemory { get; set; }
+
+        /// <summary>
+        /// 后风挡遮阳帘
+        /// </summary>
+        public string RearWindowSunshade { get; set; }
+
+        /// <summary>
+        /// 后排侧遮阳帘
+        /// </summary>
+        public string RearSideSunshade { get; set; }
+
+        /// <summary>
+        /// 后排侧隐私玻璃
+        /// </summary>
+        public string RearPrivacyGlass { get; set; }
+
+        /// <summary>
+        /// 遮阳板化妆镜
+        /// </summary>
+        public string SunVisor { get; set; }
+
+        /// <summary>
+        /// 后雨刷
+        /// </summary>
+        public string RearWiper { get; set; }
+
+        /// <summary>
+        /// 感应雨刷
+        /// </summary>
+        public string SensingWiper { get; set; }
+
+
+        /// <summary>
+        /// 空调控制方式
+        /// </summary>
+        public string AirControl { get; set; }
+
+        /// <summary>
+        /// 后排独立空调
+        /// </summary>
+        public string RearAir { get; set; }
+
+        /// <summary>
+        /// 后座出风口
+        /// </summary>
+        public string BackWindOutlet { get; set; }
+
+        /// <summary>
+        /// 温度分区控制
+        /// </summary>
+        public string TempControlRespective { get; set; }
+
+        /// <summary>
+        /// 车内空气调节/花粉过滤
+        /// </summary>
+        public string PollenFilter { get; set; }
+
+        /// <summary>
+        /// 车载冰箱
+        /// </summary>
+        public string Refrigerator { get; set; }
+
 
     }
 }
