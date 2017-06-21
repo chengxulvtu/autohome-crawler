@@ -986,11 +986,11 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         ///<summary>
         ///外观颜色
         ///</summary>
-        public ICollection<Color> Colors = new List<Color>();
+        public virtual ICollection<Color> Colors { get; set; } = new List<Color>();
 
         ///<summary>
         ///内饰颜色
         ///</summary>
-        public ICollection<InnerColor> InnerColors = new List<InnerColor>();
+        public virtual ICollection<InnerColor> InnerColors { get; set; } = new List<InnerColor>();
     }
 }

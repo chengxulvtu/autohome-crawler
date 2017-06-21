@@ -13,6 +13,6 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public virtual Serie Serie { get; set; }
 
-        public ICollection<CarType> CarTypes { get; set; } = new List<CarType>();
+        public virtual ICollection<CarType> CarTypes { get; set; } = new List<CarType>();
     }
 }

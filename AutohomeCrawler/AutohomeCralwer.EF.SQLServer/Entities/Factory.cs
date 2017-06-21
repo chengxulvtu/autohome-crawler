@@ -15,7 +15,7 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public virtual Brand Brand { get; set; }
 
-        public ICollection<Serie> Series = new List<Serie>();
+        public ICollection<Serie> Series { get; set; } = new List<Serie>();
 
     }
 }

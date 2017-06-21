@@ -13,8 +13,8 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public string FirstLetter { get; set; }
 
-        public ICollection<Factory> Factories = new List<Factory>();
+        public virtual ICollection<Factory> Factories { get; set; } = new List<Factory>();
 
-        public ICollection<Serie> Series = new List<Serie>();
+        public virtual ICollection<Serie> Series { get; set; } = new List<Serie>();
     }
 }

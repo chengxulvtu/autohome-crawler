@@ -23,8 +23,8 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public virtual Brand Brand { get; set; }
 
-        public ICollection<Year> Years { get; set; } = new List<Year>();
+        public virtual ICollection<Year> Years { get; set; } = new List<Year>();
 
-        public ICollection<CarType> CarTypes { get; set; } = new List<CarType>();
+        public virtual ICollection<CarType> CarTypes { get; set; } = new List<CarType>();
     }
 }
