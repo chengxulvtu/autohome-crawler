@@ -30,14 +30,9 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         #region 基本参数
 
         /// <summary>
-        /// 厂商Id
-        /// </summary>
-        public int FactoryId { get; set; }
-
-        /// <summary>
         /// 厂商
         /// </summary>
-        public virtual Factory Factory { get; set; }
+        public string Factory { get; set; }
 
         #endregion
 
@@ -976,6 +971,16 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// 车载冰箱
         /// </summary>
         public string Refrigerator { get; set; }
+
+
+        public int YearId { get; set; }
+
+        public virtual Year Year { get; set; }
+
+
+        public int SerieId { get; set; }
+
+        public virtual Serie Serie { get; set; }
 
 
         ///<summary>

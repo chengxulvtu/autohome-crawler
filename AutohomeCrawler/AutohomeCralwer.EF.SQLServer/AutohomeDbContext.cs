@@ -32,6 +32,7 @@ namespace AutohomeCralwer.EF.SQLServer
             modelBuilder.Entity<Brand>(b =>
             {
                 b.ToTable(TableNames.Brands);
+                b.HasKey(t => t.Id);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(50);
@@ -42,6 +43,7 @@ namespace AutohomeCralwer.EF.SQLServer
             modelBuilder.Entity<Factory>(b =>
             {
                 b.ToTable(TableNames.Factories);
+                b.HasKey(t => t.Id);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(50);
@@ -53,6 +55,7 @@ namespace AutohomeCralwer.EF.SQLServer
             modelBuilder.Entity<Serie>(b =>
             {
                 b.ToTable(TableNames.Series);
+                b.HasKey(t => t.Id);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(50);
@@ -65,6 +68,7 @@ namespace AutohomeCralwer.EF.SQLServer
             modelBuilder.Entity<Year>(b =>
             {
                 b.ToTable(TableNames.Years);
+                b.HasKey(t => t.Id);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(25);
@@ -76,6 +80,7 @@ namespace AutohomeCralwer.EF.SQLServer
             modelBuilder.Entity<CarType>(b =>
             {
                 b.ToTable(TableNames.CarTypes);
+                b.HasKey(t => t.Id);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(50);
@@ -84,6 +89,7 @@ namespace AutohomeCralwer.EF.SQLServer
                 b.Property(t => t.Level).HasMaxLength(20);
                 b.Property(t => t.MaxSpeed).HasMaxLength(20);
                 b.Property(t => t.OfficialAcc).HasMaxLength(20);
+                b.Property(t => t.Factory).HasMaxLength(50);
 
                 b.Property(t => t.FactAcc).HasMaxLength(20);
                 b.Property(t => t.FactBrake).HasMaxLength(20);
@@ -303,6 +309,35 @@ namespace AutohomeCralwer.EF.SQLServer
                 b.Property(t => t.Refrigerator).HasMaxLength(20);
 
 
+                b.HasOne(t => t.Year).WithMany(t => t.CarTypes).HasForeignKey(t => t.YearId);
+                b.HasOne(t => t.Serie).WithMany(t => t.CarTypes).HasForeignKey(t => t.SerieId);
+
+            });
+
+
+            modelBuilder.Entity<Color>(b =>
+            {
+                b.ToTable(TableNames.Colors);
+                b.HasKey(t => t.Id);
+                b.Property(t => t.Id).ValueGeneratedNever();
+
+                b.Property(t => t.Name).HasMaxLength(50);
+                b.Property(t => t.Value).HasMaxLength(50);
+
+                b.HasOne(t => t.CarType).WithMany(t => t.Colors).HasForeignKey(t => t.CarTypeId);
+            });
+
+
+            modelBuilder.Entity<InnerColor>(b =>
+            {
+                b.ToTable(TableNames.InnerColors);
+                b.HasKey(t => t.Id);
+                b.Property(t => t.Id).ValueGeneratedNever();
+
+                b.Property(t => t.Name).HasMaxLength(50);
+                b.Property(t => t.Value).HasMaxLength(50);
+
+                b.HasOne(t => t.CarType).WithMany(t => t.InnerColors).HasForeignKey(t => t.CarTypeId);
             });
         }
     }
