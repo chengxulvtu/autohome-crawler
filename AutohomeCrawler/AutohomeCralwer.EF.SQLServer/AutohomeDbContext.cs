@@ -11,11 +11,19 @@ namespace AutohomeCralwer.EF.SQLServer
         }
 
 
-        public DbSet<Brand> Brands
-        {
-            get;
-            set;
-        }
+        public DbSet<Brand> Brands { get; set; }
+
+        public DbSet<Factory> Factories { get; set; }
+
+        public DbSet<Serie> Series { get; set; }
+
+        public DbSet<Year> Years { get; set; }
+
+        public DbSet<CarType> CarTypes { get; set; }
+
+        public DbSet<Color> Colors { get; set; }
+
+        public DbSet<InnerColor> InnerColors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,12 +31,20 @@ namespace AutohomeCralwer.EF.SQLServer
 
             modelBuilder.Entity<Brand>(b =>
             {
-                b.ToTable("Brands");
+                b.ToTable(TableNames.Brands);
                 b.Property(t => t.Id).ValueGeneratedNever();
 
                 b.Property(t => t.Name).HasMaxLength(50);
                 b.Property(t => t.PinYin).HasMaxLength(50);
                 b.Property(t => t.FirstLetter).HasMaxLength(1);
+            });
+
+            modelBuilder.Entity<Factory>(b =>
+            {
+                b.ToTable(TableNames.Factories);
+                b.Property(t => t.Id).ValueGeneratedNever();
+
+
             });
         }
     }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+
+
 namespace AutohomeCralwer.EF.SQLServer.Entities
 {
     // 车型
@@ -975,5 +978,14 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         public string Refrigerator { get; set; }
 
 
+        ///<summary>
+        ///外观颜色
+        ///</summary>
+        public ICollection<Color> Colors = new List<Color>();
+
+        ///<summary>
+        ///内饰颜色
+        ///</summary>
+        public ICollection<InnerColor> InnerColors = new List<InnerColor>();
     }
 }
