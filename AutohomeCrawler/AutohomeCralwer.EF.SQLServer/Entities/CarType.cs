@@ -482,21 +482,386 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         ///</summary>
         public string HDC { get; set; }
 
-///<summary>
-///可变悬架
-///</summary>
-        public string AVS{get;set;}
+        ///<summary>
+        ///可变悬架
+        ///</summary>
+        public string AVS { get; set; }
 
-///<summary>
-///空气悬架
-///</summary>
-       public string AirSuspension{get;set;} 
+        ///<summary>
+        ///空气悬架
+        ///</summary>
+        public string AirSuspension { get; set; }
 
-///<summary>
-///可变转向比
-///</summary>
-       public string VGRS{get;set;}
+        ///<summary>
+        ///可变转向比
+        ///</summary>
+        public string VGRS { get; set; }
 
-       
+        ///<summary>
+        ///前桥限滑差速器
+        ///</summary>
+        public string FrontDifferential { get; set; }
+
+        ///<summary>
+        ///中央限滑差速器
+        ///</summary>
+        public string CentralDifferential { get; set; }
+
+        ///<summary>
+        ///后桥限滑差速器
+        ///</summary>
+        public string RearDifferential { get; set; }
+
+        ///<summary>
+        ///整体主动转向系统
+        ///</summary>
+        public string IntegralActiveSteering { get; set; }
+
+        ///<summary>
+        ///电动天窗
+        ///</summary>
+        public string PowerSunroof { get; set; }
+
+
+        ///<summary>
+        ///全景天窗
+        ///</summary>
+        public string PanoramicSunroof { get; set; }
+
+        ///<summary>
+        ///运动外观套件
+        ///</summary>
+        public string SportPackage { get; set; }
+
+        ///<summary>
+        ///铝合金钢圈
+        ///</summary>
+        public string LumminumRim { get; set; }
+
+        ///<summary>
+        ///电吸门
+        ///</summary>
+        public string ElecSuctionDoor { get; set; }
+
+        ///<summary>
+        ///侧滑门
+        ///</summary>
+        public string SideSlidingDoor { get; set; }
+
+        ///<summary>
+        ///电动后备箱
+        ///</summary>
+        public string ElecTrunk { get; set; }
+
+        ///<summary>
+        ///感应后备箱
+        ///</summary>
+        public string SenseTrunk { get; set; }
+
+        ///<summary>
+        ///车顶行李架
+        ///</summary>
+        public string RoofRack { get; set; }
+
+        ///<summary>
+        ///发动机电子防盗
+        ///</summary>
+        public string IMMO { get; set; }
+
+        ///<summary>
+        ///车内中控锁
+        ///</summary>
+        public string CentralLocking { get; set; }
+
+        ///<summary>
+        ///遥控钥匙
+        ///</summary>
+        public string RKE { get; set; }
+
+        ///<summary>
+        ///无钥匙启动系统
+        ///</summary>
+        public string PEPS { get; set; }
+
+        ///<summary>
+        ///无钥匙进入系统
+        ///</summary>
+        public string PKE { get; set; }
+
+        ///<summary>
+        ///真皮方向盘 Leather Steering Wheel
+        ///</summary>
+        public string LeatherSW { get; set; }
+
+        ///<summary>
+        ///方向盘调节 Adjustable Steering Wheel
+        ///</summary>
+        public string AdjustableSW { get; set; }
+
+        ///<summary>
+        ///方向盘电动调节
+        ///</summary>
+        public string ElecAdjustableSW { get; set; }
+
+        ///<summary>
+        ///多功能方向盘 Multifunction Steering Wheel
+        ///</summary>
+        public string MultifunctionSW { get; set; }
+
+        ///<summary>
+        ///方向盘换挡
+        ///</summary>
+        public string SWShift { get; set; }
+
+        ///<summary>
+        ///方向盘加热
+        ///</summary>
+        public string SWHeat { get; set; }
+
+
+        ///<summary>
+        ///方向盘记忆
+        ///</summary>
+        public string SWMemory { get; set; }
+
+        ///<summary>
+        ///行车电脑显示屏
+        ///</summary>
+        public string ComputerDisplayScreen { get; set; }
+
+        ///<summary>
+        ///全液晶仪表盘
+        ///</summary>
+        public string FullLCDDashboard { get; set; }
+
+        ///<summary>
+        ///HUD抬头数字显示
+        ///</summary>
+        public string HUD { get; set; }
+
+        ///<summary>
+        ///座椅材质
+        ///</summary>
+        public string SeatMaterial { get; set; }
+
+        ///<summary>
+        ///运动风格座椅
+        ///</summary>
+        public string SportSeat { get; set; }
+
+        ///<summary>
+        ///座椅高低调节
+        ///</summary>
+        public string SeatHeightAdjust { get; set; }
+
+        ///<summary>
+        ///腰部支撑调节
+        ///</summary>
+        public string SeatLumbarAdjust { get; set; }
+
+        ///<summary>
+        ///肩部支撑调节
+        ///</summary>
+        public string SeatShoulderAdjust { get; set; }
+
+        ///<summary>
+        ///主驾驶座电动调节
+        ///</summary>
+        public string SeatDriverElectAdjust { get; set; }
+
+        ///<summary>
+        ///副驾驶座电动调节
+        ///</summary>
+        public string SeatPassengerElectAdjust { get; set; }
+
+        ///<summary>
+        ///第二排靠背角度调节
+        ///</summary>
+        public string SecondRowBackAngleAdjust { get; set; }
+
+        ///<summary>
+        ///第二排座椅移动
+        ///</summary>
+        public string SecondRowSeatMove { get; set; }
+
+        ///<summary>
+        ///后排座椅电动调节
+        ///</summary>
+        public string RearSeatElectAdjust { get; set; }
+
+        ///<summary>
+        ///电动座椅记忆
+        ///</summary>
+        public string ElecSeatMemory { get; set; }
+
+        ///<summary>
+        ///前排座椅加热
+        ///</summary>
+        public string FrontSeatHeat { get; set; }
+
+        ///<summary>
+        ///后排座椅加热
+        ///</summary>
+        public string RearSeatHeat { get; set; }
+
+        /// <summary>
+        /// 前排座椅通风
+        /// </summary>
+        public string FrontSeatVentilate { get; set; }
+
+        /// <summary>
+        /// 后排座椅通风
+        /// </summary>
+        public string RearSeatventilate { get; set; }
+
+        /// <summary>
+        /// 前排座椅按摩
+        /// </summary>
+        public string FrontSeatMassage { get; set; }
+
+        /// <summary>
+        /// 后排座椅按摩
+        /// </summary>
+        public string RearSeatMassage { get; set; }
+
+        /// <summary>
+        /// 第三排座椅
+        /// </summary>
+        public string ThridRowSeat { get; set; }
+
+        /// <summary>
+        /// 后排座椅放倒方式 
+        /// </summary>
+        public string RearSeatDownWay { get; set; }
+
+        /// <summary>
+        /// 前中央扶手
+        /// </summary>
+        public string FrontCentralArmrest { get; set; }
+
+        /// <summary>
+        /// 后中央扶手
+        /// </summary>
+        public string RearCentralArmrest { get; set; }
+
+        /// <summary>
+        /// 后排杯架
+        /// </summary>
+        public string RearCupShelf { get; set; }
+
+
+        /// <summary>
+        /// GPS定位
+        /// </summary>
+        public string GPS { get; set; }
+
+        /// <summary>
+        /// 定位互动服务
+        /// </summary>
+        public string Localization { get; set; }
+
+        /// <summary>
+        /// 中控台彩色大屏
+        /// </summary>
+        public string CentralColorScreen { get; set; }
+
+        ///<summary>
+        ///中控液晶分屏显示
+        ///</summary>
+        public string CentralScreenSplitDisplay { get; set; }
+
+        /// <summary>
+        /// 蓝牙/车载电话
+        /// </summary>
+        public string BTA { get; set; }
+
+        /// <summary>
+        /// 车载电视
+        /// </summary>
+        public string TV { get; set; }
+
+        /// <summary>
+        /// 后排液晶屏
+        /// </summary>
+        public string RearLCDScreen { get; set; }
+
+        /// <summary>
+        /// 220V/230V电源
+        /// </summary>
+        public string PowerSource { get; set; }
+
+        ///<summary>
+        ///CD/DVD
+        ///</summary>
+        public string DVD { get; set; }
+
+        /// <summary>
+        /// 扬声器品牌 <>
+        /// </summary>
+        public string SpeakerBrand { get; set; }
+
+        /// <summary>
+        /// 扬声器数量
+        /// </summary>
+        public string SpeakerNo { get; set; }
+
+
+        /// <summary>
+        /// 近光灯 
+        /// </summary>
+        public string LowBeam { get; set; }
+
+        /// <summary>
+        /// 远光灯 
+        /// </summary>
+        public string HighBeam { get; set; }
+
+        /// <summary>
+        /// 日间行车灯 Daytime Running Light
+        /// </summary>
+        public string DRL { get; set; }
+
+        /// <summary>
+        /// 自适应远近光
+        /// </summary>
+        public string AdaptiveHighLow { get; set; }
+
+        /// <summary>
+        /// 自动头灯
+        /// </summary>
+        public string AutoLight { get; set; }
+
+        /// <summary>
+        /// 转向辅助灯
+        /// </summary>
+        public string SteeringAssistLamp { get; set; }
+
+        /// <summary>
+        /// 转向头灯
+        /// </summary>
+        public string AFS { get; set; }
+        /// <summary>
+        /// 前雾灯
+        /// </summary>
+        public string FrontFogLamp { get; set; }
+
+        /// <summary>
+        /// 大灯高度可调
+        /// </summary>
+        public string HeadLightAdjustable { get; set; }
+
+        /// <summary>
+        /// 大灯清洗装置
+        /// </summary>
+        public string SRA { get; set; }
+
+        /// <summary>
+        /// 车内氛围灯
+        /// </summary>
+        public string AmbientLight { get; set; }
+
+
+        
+
     }
 }
