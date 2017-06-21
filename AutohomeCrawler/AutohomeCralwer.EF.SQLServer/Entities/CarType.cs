@@ -163,5 +163,54 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// </summary>
         public string Displacement { get; set; }
 
+        /// <summary>
+        /// 进气形式
+        /// </summary>
+        public string AirInForm { get; set; }
+
+        /// <summary>
+        /// 气缸排列形式
+        /// </summary>
+        public string CylinderArrangement { get; set; }
+
+        /// <summary>
+        /// 气缸数（个）
+        /// </summary>
+        public string CylinderNo { get; set; }
+
+        /// <summary>
+        /// 每缸气门数
+        /// </summary>
+        public string ValveNoPerCylinder { get; set; }
+
+        /// <summary>
+        /// 压缩比
+        /// </summary>
+        public string CompressRatio { get; set; }
+
+        /// <summary>
+        /// 配气机构
+        /// </summary>
+        public string ValveMechanism { get; set; }
+
+        /// <summary>
+        /// 缸径
+        /// </summary>
+        public string CylinderDiameter { get; set; }
+
+        /// <summary>
+        /// 行程
+        /// </summary>
+        public string Stroke { get; set; }
+
+        /// <summary>
+        /// 马力 (Ps）
+        /// </summary>
+        public string Horsepower { get; set; }
+        
+        /// <summary>
+        /// 最大功率（kW)
+        /// </summary>
+        public string Power { get; set; }
     }
 }
