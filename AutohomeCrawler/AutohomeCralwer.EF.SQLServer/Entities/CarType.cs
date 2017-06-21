@@ -125,7 +125,7 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// <summary>
         /// 车身结构
         /// </summary>
-        public string BodyStructure { get; set; }
+        public string BodyShellStruct { get; set; }
 
         /// <summary>
         /// 行李箱容积 (L)
@@ -207,10 +207,296 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
         /// 马力 (Ps）
         /// </summary>
         public string Horsepower { get; set; }
-        
+
         /// <summary>
         /// 最大功率（kW)
         /// </summary>
         public string Power { get; set; }
+
+        /// <summary>
+        /// 最大功率转速 （rpm)
+        ///</summary>
+        public string PowerRevolvingSpeed { get; set; }
+
+        ///<summary>
+        /// 最大扭矩 (N·m)
+        ///</summary>
+        public string Torque { get; set; }
+
+        ///<summary>
+        /// 最大扭矩转速 (rpm)
+        ///</summary>
+        public string TorqueRevolvingSpeed { get; set; }
+
+        ///<summary>
+        /// 发动机特有技术
+        ///</summary>
+        public string EngineSpecialTech { get; set; }
+
+        ///<summary>
+        /// 燃料形式
+        ///</summary>
+        public string FuelType { get; set; }
+
+        ///<summary>
+        /// 燃油标号
+        ///</summary>
+        public string FuelLabel { get; set; }
+
+        ///<summary>
+        ///供油方式
+        ///</summary>
+        public string FuelSupply { get; set; }
+
+        ///<summary>
+        ///缸盖材料
+        ///</summary>
+        public string CylinderHeadMaterial { get; set; }
+
+        ///<summary>
+        ///缸体材料
+        ///</summary>
+        public string CylinderBodyMaterial { get; set; }
+
+        ///<summary>
+        ///环保标准
+        ///</summary>
+        public string EnvStandard { get; set; }
+
+
+        ///<summary>
+        /// 变速箱
+        ///</summary>
+        public string GearBox { get; set; }
+
+        ///<summary>
+        ///档位个数
+        ///</summary>
+        public string GearsNo { get; set; }
+
+        ///<summary>
+        ///变速箱类型
+        ///</summary>
+        public string GearBoxType { get; set; }
+
+        ///<summary>
+        ///驱动类型
+        ///</summary>
+        public string DriveType { get; set; }
+
+        ///<summary>
+        ///前悬架类型
+        ///</summary>
+        public string FrontSuspension { get; set; }
+
+        ///<summary>
+        ///后悬架类型
+        ///</summary>
+        public string RearSuspension { get; set; }
+
+        ///<summary>
+        ///助力类型
+        ///</summary>
+        public string PowerType { get; set; }
+
+        ///<summary>
+        /// 车体结构
+        ///</summary>
+        public string BodyStructure { get; set; }
+
+        ///<summary>
+        /// 前制动器类型
+        ///</summary>
+        public string FrontBrake { get; set; }
+
+        ///<summary>
+        ///后制动器类型
+        ///</summary>
+        public string RearBrake { get; set; }
+
+        ///<summary>
+        ///驻车制动类型
+        ///</summary>
+        public string ParkBrake { get; set; }
+
+        ///<summary>
+        ///前轮胎规格
+        ///</summary>
+        public string FrontTire { get; set; }
+
+        ///<summary>
+        ///后轮胎规格
+        ///</summary>
+        public string RearTire { get; set; }
+
+        ///<summary>
+        ///备胎规格
+        ///</summary>
+        public string SpareTire { get; set; }
+
+        ///<summary>
+        /// 主驾驶座安全气囊
+        ///</summary>
+        public string DriverAirBag { get; set; }
+
+        ///<summary>
+        ///副驾驶座安全气囊
+        ///</summary>
+        public string PassengerAirBag { get; set; }
+        ///<summary>
+        ///前排侧气囊
+        ///</summary>
+        public string FrontSideAirBag { get; set; }
+
+        ///<summary>
+        ///后排侧气囊
+        ///</summary>
+        public string RearSideAirBag { get; set; }
+
+        ///<summary>
+        ///前排头部气囊（气帘）
+        ///</summary>
+        public string FrontHeadAirBag { get; set; }
+
+        ///<summary>
+        /// 后排头部气囊（气帘）
+        ///</summary>
+        public string RearHeadAirBag { get; set; }
+
+        ///<summary>
+        ///膝部气囊
+        ///</summary>
+        public string KneeAirBag { get; set; }
+
+        ///<summary>
+        ///胎压监测装置
+        ///</summary>
+        public string TPMS { get; set; }
+        ///<summary>
+        ///零胎压继续行驶
+        ///</summary>
+        public string ZeroTirePressure { get; set; }
+
+        ///<summary>
+        ///安全带未系提示
+        ///</summary>
+        public string SeatBeltPrompt { get; set; }
+
+        ///<summary>
+        ///ISOFIX儿童座椅接口
+        ///</summary>
+        public string ISOFIX { get; set; }
+
+        ///<summary>
+        ///ABS防抱死
+        ///</summary>
+        public string ABS { get; set; }
+
+        ///<summary>
+        ///制动力分配
+        ///</summary>
+        public string EBD { get; set; }
+
+        ///<summary>
+        ///刹车辅助
+        ///</summary>
+        public string EBA { get; set; }
+
+        ///<summary>
+        ///牵引力控制
+        ///</summary>
+        public string MASR { get; set; }
+
+        ///<summary>
+        ///车身稳定控制
+        ///</summary>
+        public string ESC { get; set; }
+
+        ///<summary>
+        ///并线辅助
+        ///</summary>
+        public string SideAssist { get; set; }
+
+        ///<summary>
+        ///车道偏离预警系统
+        ///</summary>
+        public string LWDS { get; set; }
+
+        ///<summary>
+        ///主动刹车/主动安全系统
+        ///</summary>
+        public string ActiveBrakeAssist { get; set; }
+
+        ///<summary>
+        ///夜视系统 Night View Assist
+        ///</summary>
+        public string NVA { get; set; }
+
+        ///<summary>
+        ///前驻车雷达
+        ///</summary>
+        public string FrontParkRadar { get; set; }
+
+        ///<summary>
+        ///后驻车雷达
+        ///</summary>
+        public string RearParkRadar { get; set; }
+
+        ///<summary>
+        ///全景摄像头
+        ///</summary>
+        public string PanoramicCamera { get; set; }
+
+        ///<summary>
+        ///定速巡航
+        ///</summary>
+        public string CruiseControl { get; set; }
+
+        ///<summary>
+        ///自适应巡航 Adaptive Cruise Control
+        ///</summary>
+        public string ACC { get; set; }
+
+        ///<summary>
+        ///自动泊车入位
+        ///</summary>
+        public string ParkAssistVision { get; set; }
+
+        ///<summary>
+        ///发动机启停技术
+        ///</summary>
+        public string EngineStartStop { get; set; }
+
+        ///<summary>
+        ///上坡辅助 Hill-start Assist ControL
+        ///</summary>
+        public string HAC { get; set; }
+
+        ///<summary>
+        ///自动驻车
+        ///</summary>
+        public string AutoHold { get; set; }
+
+        ///<summary>
+        ///陡坡缓降系统
+        ///</summary>
+        public string HDC { get; set; }
+
+///<summary>
+///可变悬架
+///</summary>
+        public string AVS{get;set;}
+
+///<summary>
+///空气悬架
+///</summary>
+       public string AirSuspension{get;set;} 
+
+///<summary>
+///可变转向比
+///</summary>
+       public string VGRS{get;set;}
+
+       
     }
 }
