@@ -47,7 +47,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false),
-                    BrandId = table.Column<int>(nullable: false),
                     FactoryId = table.Column<int>(nullable: false),
                     FirstLetter = table.Column<string>(maxLength: 1, nullable: true),
                     Name = table.Column<string>(maxLength: 50, nullable: true),
@@ -57,12 +56,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Series", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Series_Brands_BrandId",
-                        column: x => x.BrandId,
-                        principalTable: "Brands",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Series_Factories_FactoryId",
                         column: x => x.FactoryId,
@@ -261,7 +254,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                     SecondRowSeatMove = table.Column<string>(maxLength: 20, nullable: true),
                     SensingTrunk = table.Column<string>(maxLength: 20, nullable: true),
                     SensingWiper = table.Column<string>(maxLength: 20, nullable: true),
-                    SerieId = table.Column<int>(nullable: false),
                     SideAssist = table.Column<string>(maxLength: 20, nullable: true),
                     SideSlidingDoor = table.Column<string>(maxLength: 20, nullable: true),
                     SpareTire = table.Column<string>(maxLength: 20, nullable: true),
@@ -291,12 +283,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CarTypes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CarTypes_Series_SerieId",
-                        column: x => x.SerieId,
-                        principalTable: "Series",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CarTypes_Years_YearId",
                         column: x => x.YearId,
@@ -346,11 +332,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CarTypes_SerieId",
-                table: "CarTypes",
-                column: "SerieId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CarTypes_YearId",
                 table: "CarTypes",
                 column: "YearId");
@@ -369,11 +350,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 name: "IX_InnerColors_CarTypeId",
                 table: "InnerColors",
                 column: "CarTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Series_BrandId",
-                table: "Series",
-                column: "BrandId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Series_FactoryId",

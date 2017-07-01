@@ -53,7 +53,7 @@ namespace AutohomeCralwer.Core.Http
         // 构造请求地址
         private string BuildRequestUri(int brandId, GetSerieType type)
         {
-            return $"{Constant.AutohomeUri}?type={(int)type}&value={brandId}";
+            return $"{Constant.AutohomeUrl}?type={(int)type}&value={brandId}";
         }
     }
 }

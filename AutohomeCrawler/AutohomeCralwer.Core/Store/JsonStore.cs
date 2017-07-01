@@ -100,7 +100,7 @@ namespace AutohomeCralwer.Core
         {
             if (!File.Exists(fileName))
             {
-                return null;
+                return string.Empty;
             }
             using (var fileStream = new FileStream(fileName, FileMode.Open))
             {

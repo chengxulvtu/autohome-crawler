@@ -8,7 +8,7 @@ using AutohomeCralwer.EF.SQLServer;
 namespace AutohomeCralwer.EF.SQLServer.Migrations
 {
     [DbContext(typeof(AutohomeDbContext))]
-    [Migration("20170621100901_Init")]
+    [Migration("20170623050952_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -533,8 +533,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                     b.Property<string>("SensingWiper")
                         .HasMaxLength(20);
 
-                    b.Property<int>("SerieId");
-
                     b.Property<string>("SideAssist")
                         .HasMaxLength(20);
 
@@ -611,8 +609,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SerieId");
-
                     b.HasIndex("YearId");
 
                     b.ToTable("CarTypes");
@@ -679,8 +675,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                 {
                     b.Property<int>("Id");
 
-                    b.Property<int>("BrandId");
-
                     b.Property<int>("FactoryId");
 
                     b.Property<string>("FirstLetter")
@@ -694,8 +688,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
                     b.Property<int>("State");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BrandId");
 
                     b.HasIndex("FactoryId");
 
@@ -720,11 +712,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
 
             modelBuilder.Entity("AutohomeCralwer.EF.SQLServer.Entities.CarType", b =>
                 {
-                    b.HasOne("AutohomeCralwer.EF.SQLServer.Entities.Serie", "Serie")
-                        .WithMany("CarTypes")
-                        .HasForeignKey("SerieId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("AutohomeCralwer.EF.SQLServer.Entities.Year", "Year")
                         .WithMany("CarTypes")
                         .HasForeignKey("YearId")
@@ -757,11 +744,6 @@ namespace AutohomeCralwer.EF.SQLServer.Migrations
 
             modelBuilder.Entity("AutohomeCralwer.EF.SQLServer.Entities.Serie", b =>
                 {
-                    b.HasOne("AutohomeCralwer.EF.SQLServer.Entities.Brand", "Brand")
-                        .WithMany("Series")
-                        .HasForeignKey("BrandId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("AutohomeCralwer.EF.SQLServer.Entities.Factory", "Factory")
                         .WithMany("Series")
                         .HasForeignKey("FactoryId")

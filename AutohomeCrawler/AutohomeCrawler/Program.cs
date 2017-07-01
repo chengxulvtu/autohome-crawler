@@ -25,7 +25,7 @@ namespace AutohomeCrawler
             IServiceCollection services = new ServiceCollection();
 
             Configuration = new ConfigurationBuilder()
-                .AddUserSecrets("FC097D1A-236E-448A-BAD8-1A8007266F5D")
+                .AddUserSecrets<Program>()
                 .Build();
 
             services.AddLogging();
@@ -37,43 +37,69 @@ namespace AutohomeCrawler
                 });
             });
 
+            services.AddAutohomeCralwer()
+                    .AddBrandStore<AutohomeCralwer.EF.SQLServer.Store.BrandStore>()
+                    .AddFactoryStore<AutohomeCralwer.EF.SQLServer.Store.FactoryStore>()
+                    .AddSerieStore<AutohomeCralwer.EF.SQLServer.Store.SerieStore>();
 
-            services.AddScoped<IJsonStore, FileJsonStore>();
-            services.AddTransient<IBrandCralwer, BrandCralwer>();
-            services.AddTransient<ISerieCralwer, SerieCralwer>();
-            services.AddTransient<IBrandJson, BrandJson>();
-
-            services.AddTransient<IBrandParser, BrandParser>();
-
-            services.AddTransient<IBrandStore, AutohomeCralwer.EF.SQLServer.Store.BrandStore>();
 
             var serviceProvider = services.BuildServiceProvider();
             serviceProvider.GetService<ILoggerFactory>().AddConsole();
 
-            var brandCralwer = serviceProvider.GetService<IBrandCralwer>();
 
-            var brands = brandCralwer.GetBrandsAsync(GetBrandType.Normal).Result;
+            //var carTypeJson = serviceProvider.GetService<ICarTypeJson>();
+            //var json = carTypeJson.GetJsonAsync(2903, 6457).Result;
+            //Console.WriteLine(json);
+
+            //var brandCralwer = serviceProvider.GetService<IBrandCralwer>();
+            //var brands = brandCralwer.GetBrandsAsync(GetBrandType.Normal).Result;
 
             //var serieCralwer = serviceProvider.GetService<ISerieCralwer>();
 
-            foreach (var brand in brands)
+            //var brandStore = serviceProvider.GetService<IBrandStore>();
+
+            //var task = brandStore.PersistBrandsAsync(brands);
+
+            //task.ContinueWith(t =>
+            //{
+            //    Console.WriteLine("success");
+            //});
+
+            var autohomeCralwer = serviceProvider.GetService<ICralwer>();
+            //autohomeCralwer.CralwerAsync().ContinueWith(t =>
+            //{
+            //    Console.WriteLine("success");
+            //    t.Wait();
+            //});
+
+            autohomeCralwer.CralwerAsync().ContinueWith(t =>
             {
-                Console.WriteLine($"{brand.Id}-{brand.Name}-{brand.PinYin}-{brand.BFirstLetter}");
+                Console.WriteLine("success");
+                t.Wait();
+            });
 
 
-                //var factories = serieCralwer.GetFactoriesAsync(brand.Id, GetSerieType.All).Result;
+            //foreach (var brand in brands)
+            //{
+            //Console.WriteLine($"{brand.Id}-{brand.Name}-{brand.PinYin}-{brand.BFirstLetter}");
 
-                //foreach (var factory in factories)
-                //{
-                //    Console.WriteLine($"{factory.Id}-{factory.Name}");
 
-                //    foreach (var serie in factory.Series)
-                //    {
-                //        Console.WriteLine($"{serie.Id}-{serie.Name}-{serie.State}");
-                //    }
-                //}
 
-            }
+
+
+            //var factories = serieCralwer.GetFactoriesAsync(brand.Id, GetSerieType.All).Result;
+
+            //foreach (var factory in factories)
+            //{
+            //    Console.WriteLine($"{factory.Id}-{factory.Name}");
+
+            //    foreach (var serie in factory.Series)
+            //    {
+            //        Console.WriteLine($"{serie.Id}-{serie.Name}-{serie.State}");
+            //    }
+            //}
+
+            //}
 
 
 

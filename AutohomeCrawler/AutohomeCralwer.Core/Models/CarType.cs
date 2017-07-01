@@ -107,4 +107,14 @@ namespace AutohomeCralwer.Core.Models
 
 
     }
+
+    /// <summary>
+    /// 获取车型类型
+    /// </summary>
+    public enum GetCarTypeType
+    {
+        Sale = 8,
+
+        All = 5
+    }
 }

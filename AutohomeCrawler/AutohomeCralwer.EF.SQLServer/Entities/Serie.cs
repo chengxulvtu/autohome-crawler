@@ -19,12 +19,6 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public virtual Factory Factory { get; set; }
 
-        public int BrandId { get; set; }
-
-        public virtual Brand Brand { get; set; }
-
         public virtual ICollection<Year> Years { get; set; } = new List<Year>();
-
-        public virtual ICollection<CarType> CarTypes { get; set; } = new List<CarType>();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutohomeCralwer.Core;
 using AutohomeCralwer.Core.Models;
+using System.Linq;
 
 namespace AutohomeCralwer.EF.SQLServer.Store
 {
@@ -14,9 +15,18 @@ namespace AutohomeCralwer.EF.SQLServer.Store
         {
             _context = context;
         }
-        public Task PersistFactoriesAsync(IEnumerable<Factory> factories)
+        public async Task PersistFactoriesAsync(IEnumerable<Factory> factories)
         {
-            throw new NotImplementedException();
+            var factoryEntities = factories.Select(t => new Entities.Factory
+            {
+                Id = t.Id,
+                Name = t.Name,
+                FirstLetter = t.FirstLetter,
+                BrandId = t.BrandId
+            });
+
+            _context.Factories.AddRange(factoryEntities);
+            await _context.SaveChangesAsync();
         }
     }
 }

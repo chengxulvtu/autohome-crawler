@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutohomeCralwer.Core;
 using AutohomeCralwer.Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutohomeCralwer.EF.SQLServer.Store
 {
@@ -30,5 +31,19 @@ namespace AutohomeCralwer.EF.SQLServer.Store
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Brand>> GetBrandsAsync()
+        {
+            var brandEntities = await _context.Brands.ToListAsync();
+
+            return brandEntities.Select(t => new Brand
+            {
+                Id = t.Id,
+                Name = t.Name,
+                BFirstLetter = t.FirstLetter,
+                PinYin = t.PinYin
+            });
+        }
+
     }
 }

@@ -977,12 +977,6 @@ namespace AutohomeCralwer.EF.SQLServer.Entities
 
         public virtual Year Year { get; set; }
 
-
-        public int SerieId { get; set; }
-
-        public virtual Serie Serie { get; set; }
-
-
         ///<summary>
         ///外观颜色
         ///</summary>

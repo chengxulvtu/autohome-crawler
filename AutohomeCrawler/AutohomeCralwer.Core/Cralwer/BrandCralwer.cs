@@ -9,6 +9,11 @@ using Newtonsoft.Json;
 
 namespace AutohomeCralwer.Core
 {
+    public interface IBrandCralwer
+    {
+        Task<IEnumerable<Brand>> GetBrandsAsync(GetBrandType type);
+    }
+
     // 爬取品牌
     public class BrandCralwer : IBrandCralwer
     {
@@ -28,13 +33,19 @@ namespace AutohomeCralwer.Core
         public async Task<IEnumerable<Brand>> GetBrandsAsync(GetBrandType type)
         {
             var brandJson = await _brandJson.GetJsonAsync(type);
+            var brandJsonFromStore = await _jsonStore.GetBrandJsonAsync();
+
+            if (CompareJson.Compare(brandJson, brandJsonFromStore))
+            {
+                // 如果本次与上次没有变化，直接返回空集合
+                return new List<Brand>();
+            }
+
             if (!string.IsNullOrWhiteSpace(brandJson))
             {
                 await _jsonStore.SaveBrandJsonAsync(brandJson);
             }
             var brands = _brandParser.Parse(brandJson);
-
-            await _brandStore.PersistBrandsAsync(brands);
 
             return brands;
         }

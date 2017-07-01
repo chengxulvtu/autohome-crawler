@@ -8,6 +8,7 @@ namespace AutohomeCralwer.EF.SQLServer
     {
         public AutohomeDbContext(DbContextOptions<AutohomeDbContext> options) : base(options)
         {
+            Database.Migrate();
         }
 
 
@@ -62,7 +63,6 @@ namespace AutohomeCralwer.EF.SQLServer
                 b.Property(t => t.FirstLetter).HasMaxLength(1);
 
                 b.HasOne(t => t.Factory).WithMany(t => t.Series).HasForeignKey(t => t.FactoryId);
-                b.HasOne(t => t.Brand).WithMany(t => t.Series).HasForeignKey(t => t.BrandId);
             });
 
             modelBuilder.Entity<Year>(b =>
@@ -310,8 +310,6 @@ namespace AutohomeCralwer.EF.SQLServer
 
 
                 b.HasOne(t => t.Year).WithMany(t => t.CarTypes).HasForeignKey(t => t.YearId);
-                b.HasOne(t => t.Serie).WithMany(t => t.CarTypes).HasForeignKey(t => t.SerieId);
-
             });
 
 
